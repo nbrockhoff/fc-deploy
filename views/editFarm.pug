@@ -1,0 +1,8 @@
+extends layout
+
+include mixins/_farmForm
+
+block content
+	.inner
+		h2= title
+		+farmForm(farm)

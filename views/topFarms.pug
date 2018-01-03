@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  .inner
+    h2 Top #{farms.length} Farms
+    table.table
+      thead
+        td photo
+        td ranking
+        td name
+        td reviews
+        td Average Rating
+      each farm, i in farms
+        tr
+          td
+            a(href=`/farm/${farm.farmSlug}`)
+              img(width=200 src=`/uploads/${farm.photo || 'farm.png'}` alt=farm.farmName)
+          td #{i + 1}
+          td: a(href=`/farm/${farm.farmSlug}`)= farm.name
+          td= farm.reviews.length
+          td #{Math.round(farm.averageRating * 10) / 10} / 5
