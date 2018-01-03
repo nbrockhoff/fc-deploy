@@ -1,10 +1,8 @@
 @font-face {
-    font-family: 'panama';
-    src: url('/fonts/panama-bold-webfont.woff2') format('woff2'),
-         url('/fonts/panama-bold-webfont.woff') format('woff');
+    font-family: 'Open Sans', sans-serif;
+    src: url('https://fonts.googleapis.com/css?family=Open+Sans');
     font-weight: normal;
     font-style: normal;
-
 }
 
 html {
@@ -18,9 +16,9 @@ body {
 
 h1, h2, h3, h4, h5, h6, {
   font-size: 5rem;
-  font-family: 'Panama';
+  font-family: 'Open Sans';
   font-weight: 600;
-  letter-spacing:-1px;
+  text-transform: uppercase;
 }
 
 a {
@@ -42,31 +40,31 @@ p {
   position: relative;
   z-index: 2;
   margin:0;
-  font-size: 40px;
+  font-size: 30px;
   z-index: 2;
-  line-height:1.1;
-  transform: skew(0, -3deg);
+
   &--long {
-    font-size: 30px;
+    font-size: 20px;
   }
   &:before {
     content: '';
     width:50px;
-    left:0;
-    top:0;
+    //left:0;
+    //top:0;
     height:100%;
-    // top:10%;
     display: block;
     position: absolute;
     z-index: -1;
-    transform:skew(-5deg)
+    text-align: center;
+    
   }
-  line-height:1.1;
+  line-height:1.4;
   // inline link inside
   a {
     border-bottom: 0;
-    $yellowa: rgba($yellow,0.8);
-    background-image: linear-gradient(to right, $yellowa 100%, $yellowa 50%);
+    //background: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    color: #fff;
   }
 }
 
