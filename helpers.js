@@ -18,19 +18,11 @@ exports.staticMap = ([lng, lat]) => `https://maps.googleapis.com/maps/api/static
 exports.icon = (name) => fs.readFileSync(`./public/images/icons/${name}.svg`);
 
 // Some details about the site
-<<<<<<< HEAD
 exports.siteName = `Farm Crawler`;
-=======
-exports.siteName = `Iowa Independent Farms`;
->>>>>>> 639d046b6fc73103ce9a1f8891222334c8c327ed
 
 exports.menu = [
   { slug: '/farms', title: 'Farms', icon: 'store', },
   { slug: '/farmTags', title: 'Tags', icon: 'tag', },
   { slug: '/top', title: 'Top', icon: 'top', },
-<<<<<<< HEAD
-=======
-  { slug: '/add', title: 'Add', icon: 'add', },
->>>>>>> 639d046b6fc73103ce9a1f8891222334c8c327ed
-  { slug: '/map', title: 'Map', icon: 'map', },
+  { slug: '/map', title: 'Map', icon: 'map', }
 ];

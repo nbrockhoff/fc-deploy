@@ -3,11 +3,8 @@ html
   head
     title= `${title} | ${h.siteName}`
     link(rel='stylesheet', href='/dist/style.css')
-<<<<<<< HEAD
     link(rel="shortcut icon" type="image/png" href="/images/icons/fc-favicon.png")
-=======
-    link(rel="shortcut icon" type="image/png" href="/images/icons/doughnut.png")
->>>>>>> 639d046b6fc73103ce9a1f8891222334c8c327ed
+
     meta(name="viewport" content="width=device-width, initial-scale=1")
   body
     block header
@@ -31,11 +28,8 @@ html
               li.nav__item: a.nav__link(href="/hearts", class=(currentPath.startsWith('/hearts') ? 'nav__link--active' : ''))
                 != h.icon('heart')
                 span.heart-count #{user.hearts && user.hearts.length}
-<<<<<<< HEAD
               li.nav__item: a.nav__link(href="/add", class=(currentPath.startsWith('/add') ? 'nav__link--active' : ''))
                 span.center Add Your Farm
-=======
->>>>>>> 639d046b6fc73103ce9a1f8891222334c8c327ed
               li.nav__item: a.nav__link(href="/logout", class=(currentPath.startsWith('/logout') ? 'nav__link--active' : ''))
                 != h.icon('logout')
                 span Logout

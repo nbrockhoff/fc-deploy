@@ -56,10 +56,6 @@ router.post('/reviews/:id',
 );
 
 router.get('/top', catchErrors(farmController.getTopFarms));
-<<<<<<< HEAD
-=======
-
->>>>>>> 639d046b6fc73103ce9a1f8891222334c8c327ed
 /*
   API
 */

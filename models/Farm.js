@@ -32,7 +32,6 @@ const farmSchema = new mongoose.Schema({
 			required: 'You must supply an address.'
 		}
 	},
-<<<<<<< HEAD
 	farmContact: {
 		phone: {
 			type: 'String',
@@ -63,8 +62,6 @@ const farmSchema = new mongoose.Schema({
       }
 		}
 	},
-=======
->>>>>>> 639d046b6fc73103ce9a1f8891222334c8c327ed
 	farmPhoto: String,
   author: {
     type: mongoose.Schema.ObjectId,

@@ -13,16 +13,9 @@ block content
       each farm, i in farms
         tr
           td
-<<<<<<< HEAD
             a(href=`/farm/${farm.slug}`)
               img(width=200 src=`/uploads/${farm.photo || 'farm.png'}` alt=farm.farmName)
           td #{i + 1}
           td: a(href=`/farm/${farm.slug}`)= farm.name
-=======
-            a(href=`/farm/${farm.farmSlug}`)
-              img(width=200 src=`/uploads/${farm.photo || 'farm.png'}` alt=farm.farmName)
-          td #{i + 1}
-          td: a(href=`/farm/${farm.farmSlug}`)= farm.name
->>>>>>> 639d046b6fc73103ce9a1f8891222334c8c327ed
           td= farm.reviews.length
           td #{Math.round(farm.averageRating * 10) / 10} / 5
