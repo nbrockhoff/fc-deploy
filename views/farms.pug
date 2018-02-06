@@ -1,0 +1,11 @@
+extends layout
+
+include mixins/_farmCard
+include mixins/_pagination
+block content
+	.inner
+		h2= title
+		.farms
+			each farm in farms
+				+farmCard(farm)
+		+pagination(page, pages, count)
