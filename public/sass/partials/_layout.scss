@@ -1,0 +1,29 @@
+html {
+  font-size: 10px;
+}
+
+body {
+<<<<<<< HEAD
+  //background: $purple;
+  background:#89ADBB;
+  
+=======
+  background: $purple;
+  background:#efefef;
+  &:before {
+    content: '';
+    display: block;
+    background: $grad;
+    height: 10px;
+    width: 100%;
+  }
+>>>>>>> 639d046b6fc73103ce9a1f8891222334c8c327ed
+}
+
+.inner {
+  max-width:900px;
+  margin: 0 auto;
+  @media all and (max-width: 900px) {
+    padding: 2rem;
+  }
+}

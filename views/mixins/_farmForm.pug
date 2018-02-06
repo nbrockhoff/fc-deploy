@@ -1,0 +1,51 @@
+mixin farmForm(farm = {})
+	form(action=`/add/${farm._id || ''}` method="POST"  class="card" enctype="multipart/form-data")
+<<<<<<< HEAD
+		label(for="farmName") Name
+		input(type="text" name="farmName" value=farm.farmName)
+		label(for="farmDescription") Description
+		textarea(name="farmDescription")= farm.farmDescription
+		label(for="farmPhoto") Photo
+			input(type="file" name="farmPhoto" id="farmPhoto" accept="image/gif, image/png, image/jpeg")
+			if farm.farmPhoto
+				img(src=`/uploads/${farm.farmPhoto}` alt=farm.farmName width=400)
+		h4 Farm Contact Info
+		label(for="phone") Phone
+		input(type="text" id="phone" name="farmContact[phone]" value=(farm.farmContact && farm.farmContact.phone) required)
+		label(for="website") Website
+		input(type="text" id="website" name="farmContact[website]" value=(farm.farmContact && farm.farmContact.website))
+		label(for="email") Email
+		input(type="text" id="email" name="farmContact[email]" value=(farm.farmContact && farm.farmContact.email))
+		hr
+		h4 Farm Location
+		label(for="address") Address
+		input(type="text" id="address" name="farmLocation[address]" value=(farm.farmLocation && farm.farmLocation.address))
+		label(for="lng") Longitude
+		input(type="text" id="lng" name="farmLocation[coordinates][0]" value=(farm.farmLocation && farm.farmLocation.coordinates[0]) required)
+		label(for="lat") Latitude
+=======
+		label(for="farmName") Farm Name
+		input(type="text" name="farmName" value=farm.farmName)
+		label(for="farmDescription") Farm Description
+		textarea(name="farmDescription")= farm.farmDescription
+		label(for="farmPhoto") Farm Photo
+			input(type="file" name="farmPhoto" id="farmPhoto" accept="image/gif, image/png, image/jpeg")
+			if farm.farmPhoto
+				img(src=`/uploads/${farm.farmPhoto}` alt=farm.farmName width=400)
+		label(for="address") Farm Address
+		input(type="text" id="address" name="farmLocation[address]" value=(farm.farmLocation && farm.farmLocation.address))
+		label(for="lng") Farm Longitude
+		input(type="text" id="lng" name="farmLocation[coordinates][0]" value=(farm.farmLocation && farm.farmLocation.coordinates[0]) required)
+		label(for="lat") Farm Latitude
+>>>>>>> 639d046b6fc73103ce9a1f8891222334c8c327ed
+		input(type="text" id="lat" name="farmLocation[coordinates][1]" value=(farm.farmLocation && farm.farmLocation.coordinates[1]) required)
+		
+
+		- const choices = ['Organic', 'Free-Range', 'Cage-Free', 'CSA', 'Raw', 'Chemical-Free', 'Gluten-Free Options', 'Family Owned']
+		- const tags = farm.farmTags || []
+		ul.tags
+			each choice in choices
+				.tag.tag__choice
+					input(type="checkbox" id=choice value=choice name="farmTags" checked=(tags.includes(choice)))
+					label(for=choice) #{choice}
+		input(type="submit" value="Save" class="button")

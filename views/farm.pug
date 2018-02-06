@@ -1,0 +1,45 @@
+extends layout
+
+
+include mixins/_reviewForm
+include mixins/_review
+
+block content
+	.single
+		.single__hero
+			img.single__image(src=`/uploads/${farm.farmPhoto || 'farm.png'}`)
+			h2.title.title--single
+				a(href=`/farm/${farm.farmSlug}`) #{farm.farmName}
+
+	.single__details.inner
+		img.single__map(src=h.staticMap(farm.farmLocation.coordinates))
+		p.single__location= farm.farmLocation.address
+		p= farm.farmDescription
+<<<<<<< HEAD
+		
+		h4 Contact Info
+		p= farm.farmContact.phone
+			br 
+			.
+				#{farm.farmContact.email}
+			br
+			
+			a(href=`http://${farm.farmContact.website}`) #{farm.farmContact.website}
+=======
+>>>>>>> 639d046b6fc73103ce9a1f8891222334c8c327ed
+
+		if farm.farmTags
+			ul.tags
+				each farmTag in farm.farmTags
+					li.tag
+						a.tag__link(href=`/farmTags/${farmTag}`)
+							span.tag__text ##{farmTag}
+
+		if user
+			+reviewForm(farm)
+
+		if farm.reviews
+			.reviews
+				each review in farm.reviews
+					.review
+						+review(review)
