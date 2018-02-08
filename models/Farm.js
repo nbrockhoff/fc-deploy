@@ -73,7 +73,7 @@ const farmSchema = new mongoose.Schema({
   toObject: { virtuals: true }
 });
 
-farmSchema.pre('save',async function(next){
+farmSchema.pre('save', async function(next){
 	if (!this.isModified('farmName')){
 		
 		next();
